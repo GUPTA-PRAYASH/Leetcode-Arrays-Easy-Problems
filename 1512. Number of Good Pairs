@@ -1,0 +1,12 @@
+class Solution {
+    public int numIdenticalPairs(int[] nums) {
+        int count=0;
+        HashMap<Integer,Integer> h = new HashMap<>();
+        for(int x:nums){
+            int a=h.getOrDefault(x,0);
+            count+=a;
+            h.put(x,a+1);
+        }
+        return count;
+    }
+}
