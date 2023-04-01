@@ -1,0 +1,15 @@
+class Solution {
+    public int[] leftRigthDifference(int[] nums) {
+        int leftsum=0,sum=0;
+        for(int i=0;i<nums.length;i++){
+            sum+=nums[i];
+        }
+        for(int i=0;i<nums.length;i++){
+            sum-=nums[i];
+            int a=Math.abs(leftsum-sum);
+            leftsum+=nums[i];
+            nums[i]=a;
+        }
+        return nums;
+    }
+}
